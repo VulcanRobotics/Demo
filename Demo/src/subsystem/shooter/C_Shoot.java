@@ -15,18 +15,24 @@ public class C_Shoot extends CommandBase {
     
     public C_Shoot() {
         // Use requires() here to declare subsystem dependencies
+        
+        //shoote is declared in command base
+        //makes sure no other command is using the subsystem at the same time
         requires(shooter);
        
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-        setTimeout(0.5);
+        setTimeout(0.5); //starts a timer with a timeout or 0.5 seconds
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+        //spinners always need to be on while getting ready to fire
         shooter.startSpinners();
+        
+        //wait 0.5 seconds, then start trigger
         if (isTimedOut()) {
             shooter.shoot();
         }
@@ -39,6 +45,7 @@ public class C_Shoot extends CommandBase {
 
     // Called once after isFinished returns true
     protected void end() {
+        //when button is released, stop all motors to save power and prevent accedentally firing frisbees
         shooter.stop();
     }
 

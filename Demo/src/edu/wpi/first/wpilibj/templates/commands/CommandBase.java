@@ -13,6 +13,8 @@ import subsystem.shooter.SS_Shooter;
  * subsystem elsewhere in your code in your code use CommandBase.exampleSubsystem
  * @author Author
  */
+
+//this class contains instances of all the subsystems. There can only be one instance of each subsystem
 public abstract class CommandBase extends Command {
 
     public static OI oi;

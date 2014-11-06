@@ -22,6 +22,9 @@ import edu.wpi.first.wpilibj.templates.commands.ExampleCommand;
  * creating this project, you must also update the manifest file in the resource
  * directory.
  */
+
+//generally shouldn't be changed
+//controls the robot going in and out of auto and teleop
 public class RobotTemplate extends IterativeRobot {
 
     Command autonomousCommand;

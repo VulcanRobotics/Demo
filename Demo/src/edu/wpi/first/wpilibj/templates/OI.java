@@ -13,11 +13,15 @@ import subsystem.shooter.C_Shoot;
  */
 public class OI {
   
+    //declares a joystick instance
     public static Joystick driverJoystick = new Joystick(RobotMap.driverJoystick);
    
+    //button to control shooter
     Button shooterButton = new JoystickButton(driverJoystick, RobotMap.shooterButton);
         
     public OI (){
+        //when the button to shoot is pressed down, its runs the command c_shoot in subsystem.shoot
+        //when it is released, it ends the command
           shooterButton.whileHeld(new C_Shoot());
     }
     

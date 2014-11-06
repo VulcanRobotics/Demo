@@ -6,6 +6,8 @@ package edu.wpi.first.wpilibj.templates;
  * the wiring easier and significantly reduces the number of magic numbers
  * floating around.
  */
+
+//this class keeps track of where each motor, solenoid, joystick, and sensor is plugged in
 public class RobotMap {
     // For example to map the left and right motors, you could define the
     // following variables to use with your drivetrain subsystem.

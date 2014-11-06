@@ -22,14 +22,20 @@ public class SS_Drive extends Subsystem {
     
     Jaguar leftMotors = new Jaguar(RobotMap.leftMotorPWM);
     Jaguar rightMotors = new Jaguar(RobotMap.rightMotorPWM);
+    
+    //this is the built in drive system that first provides.
+    //it greatly simplifies the math to drive the robot
     RobotDrive chassis = new RobotDrive(leftMotors, rightMotors);
     
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
+        //this command needs to always run so the drivetrain will always respond to joystick input.
         setDefaultCommand(new C_Drive());
     }
     
     public void arcade(float power, float heading) {
+        
+        //arcade calculates the needed power to each motor based on the turn speed and power
         chassis.arcadeDrive(power, heading);
         Timer.delay(0.05);
     }
